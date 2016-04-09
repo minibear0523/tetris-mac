@@ -7,15 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD2ABCA91CB95961005EC237 /* SquareShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2ABCA81CB95961005EC237 /* SquareShape.swift */; };
+		AD2ABCAB1CB95967005EC237 /* LineShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2ABCAA1CB95967005EC237 /* LineShape.swift */; };
+		AD2ABCAD1CB9596D005EC237 /* TShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2ABCAC1CB9596D005EC237 /* TShape.swift */; };
+		AD2ABCAF1CB95974005EC237 /* LShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2ABCAE1CB95974005EC237 /* LShape.swift */; };
+		AD2ABCB11CB95979005EC237 /* JShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2ABCB01CB95979005EC237 /* JShape.swift */; };
+		AD2ABCB31CB9597E005EC237 /* SShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2ABCB21CB9597E005EC237 /* SShape.swift */; };
+		AD2ABCB51CB95983005EC237 /* ZShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2ABCB41CB95983005EC237 /* ZShape.swift */; };
 		ADAFF6BF1CB9449300B29050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFF6BE1CB9449300B29050 /* AppDelegate.swift */; };
 		ADAFF6C11CB9449300B29050 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFF6C01CB9449300B29050 /* ViewController.swift */; };
 		ADAFF6C31CB9449300B29050 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADAFF6C21CB9449300B29050 /* Assets.xcassets */; };
 		ADAFF6C61CB9449300B29050 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADAFF6C41CB9449300B29050 /* Main.storyboard */; };
 		ADAFF6CF1CB944E300B29050 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFF6CE1CB944E300B29050 /* Array2D.swift */; };
 		ADAFF6D21CB9450200B29050 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADAFF6D11CB9450200B29050 /* SpriteKit.framework */; };
+		ADAFF6D41CB947E500B29050 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFF6D31CB947E500B29050 /* Block.swift */; };
+		ADAFF6D61CB949DE00B29050 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFF6D51CB949DE00B29050 /* Shape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD2ABCA81CB95961005EC237 /* SquareShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareShape.swift; sourceTree = "<group>"; };
+		AD2ABCAA1CB95967005EC237 /* LineShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineShape.swift; sourceTree = "<group>"; };
+		AD2ABCAC1CB9596D005EC237 /* TShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TShape.swift; sourceTree = "<group>"; };
+		AD2ABCAE1CB95974005EC237 /* LShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LShape.swift; sourceTree = "<group>"; };
+		AD2ABCB01CB95979005EC237 /* JShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JShape.swift; sourceTree = "<group>"; };
+		AD2ABCB21CB9597E005EC237 /* SShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SShape.swift; sourceTree = "<group>"; };
+		AD2ABCB41CB95983005EC237 /* ZShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZShape.swift; sourceTree = "<group>"; };
 		ADAFF6BB1CB9449300B29050 /* Tetris-Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tetris-Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADAFF6BE1CB9449300B29050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADAFF6C01CB9449300B29050 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +40,8 @@
 		ADAFF6C71CB9449300B29050 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADAFF6CE1CB944E300B29050 /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
 		ADAFF6D11CB9450200B29050 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		ADAFF6D31CB947E500B29050 /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		ADAFF6D51CB949DE00B29050 /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +98,15 @@
 			isa = PBXGroup;
 			children = (
 				ADAFF6CE1CB944E300B29050 /* Array2D.swift */,
+				ADAFF6D31CB947E500B29050 /* Block.swift */,
+				ADAFF6D51CB949DE00B29050 /* Shape.swift */,
+				AD2ABCA81CB95961005EC237 /* SquareShape.swift */,
+				AD2ABCAA1CB95967005EC237 /* LineShape.swift */,
+				AD2ABCAC1CB9596D005EC237 /* TShape.swift */,
+				AD2ABCAE1CB95974005EC237 /* LShape.swift */,
+				AD2ABCB01CB95979005EC237 /* JShape.swift */,
+				AD2ABCB21CB9597E005EC237 /* SShape.swift */,
+				AD2ABCB41CB95983005EC237 /* ZShape.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -154,9 +181,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADAFF6D61CB949DE00B29050 /* Shape.swift in Sources */,
 				ADAFF6C11CB9449300B29050 /* ViewController.swift in Sources */,
+				AD2ABCB11CB95979005EC237 /* JShape.swift in Sources */,
+				AD2ABCA91CB95961005EC237 /* SquareShape.swift in Sources */,
+				ADAFF6D41CB947E500B29050 /* Block.swift in Sources */,
+				AD2ABCAD1CB9596D005EC237 /* TShape.swift in Sources */,
+				AD2ABCB51CB95983005EC237 /* ZShape.swift in Sources */,
+				AD2ABCAF1CB95974005EC237 /* LShape.swift in Sources */,
+				AD2ABCB31CB9597E005EC237 /* SShape.swift in Sources */,
 				ADAFF6CF1CB944E300B29050 /* Array2D.swift in Sources */,
 				ADAFF6BF1CB9449300B29050 /* AppDelegate.swift in Sources */,
+				AD2ABCAB1CB95967005EC237 /* LineShape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +337,7 @@
 				ADAFF6CC1CB9449300B29050 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
