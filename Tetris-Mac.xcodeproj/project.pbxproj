@@ -11,6 +11,8 @@
 		ADAFF6C11CB9449300B29050 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFF6C01CB9449300B29050 /* ViewController.swift */; };
 		ADAFF6C31CB9449300B29050 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADAFF6C21CB9449300B29050 /* Assets.xcassets */; };
 		ADAFF6C61CB9449300B29050 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADAFF6C41CB9449300B29050 /* Main.storyboard */; };
+		ADAFF6CF1CB944E300B29050 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFF6CE1CB944E300B29050 /* Array2D.swift */; };
+		ADAFF6D21CB9450200B29050 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADAFF6D11CB9450200B29050 /* SpriteKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		ADAFF6C21CB9449300B29050 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADAFF6C51CB9449300B29050 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADAFF6C71CB9449300B29050 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADAFF6CE1CB944E300B29050 /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
+		ADAFF6D11CB9450200B29050 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADAFF6D21CB9450200B29050 /* SpriteKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +41,7 @@
 		ADAFF6B21CB9449300B29050 = {
 			isa = PBXGroup;
 			children = (
+				ADAFF6D11CB9450200B29050 /* SpriteKit.framework */,
 				ADAFF6BD1CB9449300B29050 /* Tetris-Mac */,
 				ADAFF6BC1CB9449300B29050 /* Products */,
 			);
@@ -53,12 +59,29 @@
 			isa = PBXGroup;
 			children = (
 				ADAFF6BE1CB9449300B29050 /* AppDelegate.swift */,
-				ADAFF6C01CB9449300B29050 /* ViewController.swift */,
+				ADAFF6CD1CB944D400B29050 /* Controllers */,
 				ADAFF6C21CB9449300B29050 /* Assets.xcassets */,
 				ADAFF6C41CB9449300B29050 /* Main.storyboard */,
 				ADAFF6C71CB9449300B29050 /* Info.plist */,
+				ADAFF6D01CB944EA00B29050 /* Resources */,
 			);
 			path = "Tetris-Mac";
+			sourceTree = "<group>";
+		};
+		ADAFF6CD1CB944D400B29050 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ADAFF6C01CB9449300B29050 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		ADAFF6D01CB944EA00B29050 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ADAFF6CE1CB944E300B29050 /* Array2D.swift */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADAFF6C11CB9449300B29050 /* ViewController.swift in Sources */,
+				ADAFF6CF1CB944E300B29050 /* Array2D.swift in Sources */,
 				ADAFF6BF1CB9449300B29050 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +263,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Tetris-Mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.skystarstudio.Tetris-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -251,6 +276,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Tetris-Mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.skystarstudio.Tetris-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
