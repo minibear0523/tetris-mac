@@ -14,6 +14,7 @@
 		AD2ABCB11CB95979005EC237 /* JShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2ABCB01CB95979005EC237 /* JShape.swift */; };
 		AD2ABCB31CB9597E005EC237 /* SShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2ABCB21CB9597E005EC237 /* SShape.swift */; };
 		AD2ABCB51CB95983005EC237 /* ZShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2ABCB41CB95983005EC237 /* ZShape.swift */; };
+		AD2ABCB71CB95C0E005EC237 /* Tetris.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2ABCB61CB95C0E005EC237 /* Tetris.swift */; };
 		ADAFF6BF1CB9449300B29050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFF6BE1CB9449300B29050 /* AppDelegate.swift */; };
 		ADAFF6C11CB9449300B29050 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFF6C01CB9449300B29050 /* ViewController.swift */; };
 		ADAFF6C31CB9449300B29050 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADAFF6C21CB9449300B29050 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		AD2ABCB01CB95979005EC237 /* JShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JShape.swift; sourceTree = "<group>"; };
 		AD2ABCB21CB9597E005EC237 /* SShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SShape.swift; sourceTree = "<group>"; };
 		AD2ABCB41CB95983005EC237 /* ZShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZShape.swift; sourceTree = "<group>"; };
+		AD2ABCB61CB95C0E005EC237 /* Tetris.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tetris.swift; sourceTree = "<group>"; };
 		ADAFF6BB1CB9449300B29050 /* Tetris-Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tetris-Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADAFF6BE1CB9449300B29050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADAFF6C01CB9449300B29050 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				AD2ABCB01CB95979005EC237 /* JShape.swift */,
 				AD2ABCB21CB9597E005EC237 /* SShape.swift */,
 				AD2ABCB41CB95983005EC237 /* ZShape.swift */,
+				AD2ABCB61CB95C0E005EC237 /* Tetris.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD2ABCB71CB95C0E005EC237 /* Tetris.swift in Sources */,
 				ADAFF6D61CB949DE00B29050 /* Shape.swift in Sources */,
 				ADAFF6C11CB9449300B29050 /* ViewController.swift in Sources */,
 				AD2ABCB11CB95979005EC237 /* JShape.swift in Sources */,
