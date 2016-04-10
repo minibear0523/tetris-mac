@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import SpriteKit
 
 class ViewController: NSViewController, TetrisDelegate {
     
@@ -16,13 +17,18 @@ class ViewController: NSViewController, TetrisDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override var representedObject: AnyObject? {
-        didSet {
-        // Update the view, if already loaded.
-        }
+        let skView = view as! SKView
+        skView.showsFPS = true
+        skView.showsNodeCount = true
+        scene = GameScene(size: skView.bounds.size)
+        scene.scaleMode = .AspectFill
+        scene.tick = didTick
+        
+        tetris = Tetris()
+        tetris.delegate = self
+        tetris.beginGame()
+        
+        skView.presentScene(scene)
     }
 
     func didTick() {
