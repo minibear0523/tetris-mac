@@ -15,6 +15,7 @@
 		AD2ABCB31CB9597E005EC237 /* SShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2ABCB21CB9597E005EC237 /* SShape.swift */; };
 		AD2ABCB51CB95983005EC237 /* ZShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2ABCB41CB95983005EC237 /* ZShape.swift */; };
 		AD2ABCB71CB95C0E005EC237 /* Tetris.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2ABCB61CB95C0E005EC237 /* Tetris.swift */; };
+		AD2ABCB91CBA3A9F005EC237 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2ABCB81CBA3A9F005EC237 /* GameScene.swift */; };
 		ADAFF6BF1CB9449300B29050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFF6BE1CB9449300B29050 /* AppDelegate.swift */; };
 		ADAFF6C11CB9449300B29050 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFF6C01CB9449300B29050 /* ViewController.swift */; };
 		ADAFF6C31CB9449300B29050 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADAFF6C21CB9449300B29050 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		AD2ABCB21CB9597E005EC237 /* SShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SShape.swift; sourceTree = "<group>"; };
 		AD2ABCB41CB95983005EC237 /* ZShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZShape.swift; sourceTree = "<group>"; };
 		AD2ABCB61CB95C0E005EC237 /* Tetris.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tetris.swift; sourceTree = "<group>"; };
+		AD2ABCB81CBA3A9F005EC237 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		ADAFF6BB1CB9449300B29050 /* Tetris-Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tetris-Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADAFF6BE1CB9449300B29050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADAFF6C01CB9449300B29050 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD2ABCBA1CBA3AA2005EC237 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				AD2ABCB81CBA3A9F005EC237 /* GameScene.swift */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
 		ADAFF6B21CB9449300B29050 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +94,7 @@
 				ADAFF6C41CB9449300B29050 /* Main.storyboard */,
 				ADAFF6C71CB9449300B29050 /* Info.plist */,
 				ADAFF6D01CB944EA00B29050 /* Resources */,
+				AD2ABCBA1CBA3AA2005EC237 /* Scenes */,
 			);
 			path = "Tetris-Mac";
 			sourceTree = "<group>";
@@ -196,6 +207,7 @@
 				AD2ABCB31CB9597E005EC237 /* SShape.swift in Sources */,
 				ADAFF6CF1CB944E300B29050 /* Array2D.swift in Sources */,
 				ADAFF6BF1CB9449300B29050 /* AppDelegate.swift in Sources */,
+				AD2ABCB91CBA3A9F005EC237 /* GameScene.swift in Sources */,
 				AD2ABCAB1CB95967005EC237 /* LineShape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,7 +315,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Tetris-Mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.skystarstudio.Tetris-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -316,7 +328,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Tetris-Mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.skystarstudio.Tetris-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
