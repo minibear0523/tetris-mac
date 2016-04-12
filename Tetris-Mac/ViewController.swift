@@ -78,6 +78,8 @@ class ViewController: NSViewController, TetrisDelegate, GameSceneInputDelegate {
             scene.animateCollapsingLines(removedLines.linesRemoved, fallenBlocks: removedLines.fallenBlocks, completion: { 
                 self.gameShapeDidLand(tetris)
             })
+        } else {
+            nextShape()
         }
     }
     
@@ -97,6 +99,8 @@ class ViewController: NSViewController, TetrisDelegate, GameSceneInputDelegate {
             tetris.letShapeFall()
         case .Rotate:
             tetris.rotateShape()
+        case .Accelerate:
+            tetris.dropShape()
         }
     }
 }

@@ -14,7 +14,7 @@ let TickLengthLevelOne = NSTimeInterval(600)
 
 let NumKeyControlTypes: UInt32 = 4
 enum GameKeyControlType: Int, CustomStringConvertible {
-    case Left=0, Right, Down, Rotate
+    case Left=0, Right, Down, Rotate, Accelerate
     
     var description: String {
         switch self {
@@ -26,6 +26,8 @@ enum GameKeyControlType: Int, CustomStringConvertible {
             return "down"
         case .Rotate:
             return "rotate"
+        case .Accelerate:
+            return "accelerate"
         }
     }
     
@@ -168,10 +170,9 @@ class GameScene: SKScene {
         case "d":
             keyType = GameKeyControlType(rawValue: 1)
         case "s":
-            // s和空格的功能相同, 都是直接下落, 所以这里使用fallthrough, 直接进入空格的处理
-            fallthrough
-        case " ":
             keyType = GameKeyControlType(rawValue: 2)
+        case " ":
+            keyType = GameKeyControlType(rawValue: 4)
         case "w":
             keyType = GameKeyControlType(rawValue: 3)
         default:
