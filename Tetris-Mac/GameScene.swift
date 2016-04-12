@@ -12,6 +12,10 @@ import SpriteKit
 let BlockSize: CGFloat = 20.0
 let TickLengthLevelOne = NSTimeInterval(600)
 
+protocol GameSceneInputDelegate {
+    func keyPressed(keyType: UInt16)
+}
+
 class GameScene: SKScene {
     let gameLayer = SKNode()
     let shapeLayer = SKNode()
@@ -22,6 +26,8 @@ class GameScene: SKScene {
     var lastTick: NSDate?
     
     var textureCache = Dictionary<String, SKTexture>()
+    
+    var inputDelegate: GameSceneInputDelegate?
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("NSError not supported")
@@ -130,5 +136,7 @@ class GameScene: SKScene {
         
     }
     
-    
+    override func keyDown(theEvent: NSEvent) {
+        inputDelegate?.keyPressed(theEvent.keyCode)
+    }
 }

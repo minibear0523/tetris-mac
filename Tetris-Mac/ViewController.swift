@@ -9,14 +9,13 @@
 import Cocoa
 import SpriteKit
 
-class ViewController: NSViewController, TetrisDelegate {
-    @IBOutlet var gameView: SKView!
+class ViewController: NSViewController, TetrisDelegate, GameSceneInputDelegate {
     var scene: GameScene!
     var tetris: Tetris!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let gameView = view as! SKView
         gameView.showsFPS = true
         gameView.showsNodeCount = true
         scene = GameScene(size: gameView.bounds.size)
@@ -45,6 +44,7 @@ class ViewController: NSViewController, TetrisDelegate {
         }
     }
     
+// MARK: TetrisDelegate
     func gameDidBegin(tetris: Tetris) {
         if tetris.nextShape != nil && tetris.nextShape!.blocks[0].sprite == nil {
             scene.addPreviewShapeToScene(tetris.nextShape!, completion: { 
@@ -83,5 +83,7 @@ class ViewController: NSViewController, TetrisDelegate {
     func gameShapeDidMove(tetris: Tetris) {
         scene.redrawShape(tetris.fallingShape!) {}
     }
+    
+// MARK: - GameSceneInputDelegate
 }
 

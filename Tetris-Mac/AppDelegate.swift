@@ -10,17 +10,20 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-
-
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Insert code here to initialize your application
+        // 对本地application添加一个monitor来监听
+//        NSEvent.addLocalMonitorForEventsMatchingMask(NSEventMask.KeyDownMask) {
+//            (event: NSEvent) -> NSEvent? in
+//            return event
+//        }
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
     }
-
-
+    
+    func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
+        return true
+    }
 }
 

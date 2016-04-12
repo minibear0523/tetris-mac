@@ -30,6 +30,8 @@
 		ADA693A41CBAA60D0025197D /* levelup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ADA6939F1CBAA60D0025197D /* levelup.mp3 */; };
 		ADA693A51CBAA60D0025197D /* theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ADA693A01CBAA60D0025197D /* theme.mp3 */; };
 		ADA693A71CBAA6120025197D /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = ADA693A61CBAA6120025197D /* Sprites.atlas */; };
+		ADA693AA1CBC99710025197D /* KeyboardControlInputSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA693A91CBC99710025197D /* KeyboardControlInputSource.swift */; };
+		ADA693AC1CBC99B20025197D /* ControlInputSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA693AB1CBC99B20025197D /* ControlInputSource.swift */; };
 		ADAFF6BF1CB9449300B29050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFF6BE1CB9449300B29050 /* AppDelegate.swift */; };
 		ADAFF6C11CB9449300B29050 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFF6C01CB9449300B29050 /* ViewController.swift */; };
 		ADAFF6C31CB9449300B29050 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADAFF6C21CB9449300B29050 /* Assets.xcassets */; };
@@ -62,6 +64,8 @@
 		ADA6939F1CBAA60D0025197D /* levelup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = levelup.mp3; sourceTree = "<group>"; };
 		ADA693A01CBAA60D0025197D /* theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = theme.mp3; sourceTree = "<group>"; };
 		ADA693A61CBAA6120025197D /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = "<group>"; };
+		ADA693A91CBC99710025197D /* KeyboardControlInputSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardControlInputSource.swift; sourceTree = "<group>"; };
+		ADA693AB1CBC99B20025197D /* ControlInputSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlInputSource.swift; sourceTree = "<group>"; };
 		ADAFF6BB1CB9449300B29050 /* Tetris-Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tetris-Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADAFF6BE1CB9449300B29050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADAFF6C01CB9449300B29050 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +131,15 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
+		ADA693A81CBC99640025197D /* InputControl */ = {
+			isa = PBXGroup;
+			children = (
+				ADA693A91CBC99710025197D /* KeyboardControlInputSource.swift */,
+				ADA693AB1CBC99B20025197D /* ControlInputSource.swift */,
+			);
+			path = InputControl;
+			sourceTree = "<group>";
+		};
 		ADAFF6B21CB9449300B29050 = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +160,7 @@
 		ADAFF6BD1CB9449300B29050 /* Tetris-Mac */ = {
 			isa = PBXGroup;
 			children = (
+				ADA693A81CBC99640025197D /* InputControl */,
 				ADA693A61CBAA6120025197D /* Sprites.atlas */,
 				ADA6939B1CBAA60D0025197D /* Sounds */,
 				ADA6938D1CBAA5D20025197D /* Supporting Files */,
@@ -280,8 +294,10 @@
 				AD2ABCB51CB95983005EC237 /* ZShape.swift in Sources */,
 				AD2ABCAF1CB95974005EC237 /* LShape.swift in Sources */,
 				AD2ABCB31CB9597E005EC237 /* SShape.swift in Sources */,
+				ADA693AC1CBC99B20025197D /* ControlInputSource.swift in Sources */,
 				ADAFF6CF1CB944E300B29050 /* Array2D.swift in Sources */,
 				ADAFF6BF1CB9449300B29050 /* AppDelegate.swift in Sources */,
+				ADA693AA1CBC99710025197D /* KeyboardControlInputSource.swift in Sources */,
 				ADA6938C1CBA9E330025197D /* GameWindowController.swift in Sources */,
 				AD2ABCB91CBA3A9F005EC237 /* GameScene.swift in Sources */,
 				AD2ABCAB1CB95967005EC237 /* LineShape.swift in Sources */,
