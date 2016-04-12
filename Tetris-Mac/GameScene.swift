@@ -12,8 +12,27 @@ import SpriteKit
 let BlockSize: CGFloat = 20.0
 let TickLengthLevelOne = NSTimeInterval(600)
 
+let NumKeyControlTypes: UInt32 = 4
+enum GameKeyControlType: Int, CustomStringConvertible {
+    case Left=0, Right, Down, Rotate
+    
+    var description: String {
+        switch self {
+        case .Left:
+            return "left"
+        case .Right:
+            return "right"
+        case .Down:
+            return "down"
+        case .Rotate:
+            return "rotate"
+        }
+    }
+    
+}
+
 protocol GameSceneInputDelegate {
-    func keyPressed(keyType: UInt16)
+    func keyPressed(keyType: GameKeyControlType)
 }
 
 class GameScene: SKScene {
@@ -137,6 +156,30 @@ class GameScene: SKScene {
     }
     
     override func keyDown(theEvent: NSEvent) {
-        inputDelegate?.keyPressed(theEvent.keyCode)
+        guard let characters = theEvent.charactersIgnoringModifiers else {
+            return
+        }
+        
+        let char = characters[characters.startIndex]
+        var keyType: GameKeyControlType?
+        switch char {
+        case "a":
+            keyType = GameKeyControlType(rawValue: 0)
+        case "d":
+            keyType = GameKeyControlType(rawValue: 1)
+        case "s":
+            // s和空格的功能相同, 都是直接下落, 所以这里使用fallthrough, 直接进入空格的处理
+            fallthrough
+        case " ":
+            keyType = GameKeyControlType(rawValue: 2)
+        case "w":
+            keyType = GameKeyControlType(rawValue: 3)
+        default:
+            keyType = nil
+        }
+        guard keyType != nil else {
+            return
+        }
+        inputDelegate?.keyPressed(keyType!)
     }
 }

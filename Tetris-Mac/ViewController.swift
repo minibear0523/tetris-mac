@@ -21,6 +21,7 @@ class ViewController: NSViewController, TetrisDelegate, GameSceneInputDelegate {
         scene = GameScene(size: gameView.bounds.size)
         scene.scaleMode = .AspectFill
         scene.tick = didTick
+        scene.inputDelegate = self
         
         tetris = Tetris()
         tetris.delegate = self
@@ -85,5 +86,18 @@ class ViewController: NSViewController, TetrisDelegate, GameSceneInputDelegate {
     }
     
 // MARK: - GameSceneInputDelegate
+    func keyPressed(keyType: GameKeyControlType) {
+        print(keyType.description)
+        switch keyType {
+        case .Left:
+            tetris.moveShapeLeft()
+        case .Right:
+            tetris.moveShapeRight()
+        case .Down:
+            tetris.letShapeFall()
+        case .Rotate:
+            tetris.rotateShape()
+        }
+    }
 }
 
