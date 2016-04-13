@@ -72,6 +72,12 @@ class GameScene: SKScene {
         shapeLayer.position = LayerPosition
         shapeLayer.addChild(gameBoard)
         gameLayer.addChild(shapeLayer)
+        
+        runAction(SKAction.repeatActionForever(SKAction.playSoundFileNamed("theme.mp3", waitForCompletion: true)))
+    }
+    
+    func playSound(sound: String) {
+        runAction(SKAction.playSoundFileNamed(sound, waitForCompletion: false))
     }
     
     override func update(currentTime: NSTimeInterval) {
@@ -154,7 +160,49 @@ class GameScene: SKScene {
     }
     
     func animateCollapsingLines(linesToRemove: Array<Array<Block>>, fallenBlocks: Array<Array<Block>>, completion: ()->()){
+        var longestDuration: NSTimeInterval = 0
+        for (columnIdx, column) in fallenBlocks.enumerate() {
+            for (blockIdx, block) in column.enumerate() {
+                let newPosition = pointForColumn(block.column, row: block.row)
+                let sprite = block.sprite!
+                
+                let delay = (NSTimeInterval(columnIdx) * 0.05) + (NSTimeInterval(blockIdx) * 0.05)
+                let duration = NSTimeInterval(((sprite.position.y - newPosition.y) / BlockSize) * 0.1)
+                let moveAction = SKAction.moveTo(newPosition, duration: duration)
+                moveAction.timingMode = .EaseOut
+                sprite.runAction(SKAction.sequence([SKAction.waitForDuration(delay), moveAction]))
+                longestDuration = max(longestDuration, duration + delay)
+            }
+        }
         
+        for rowToRemove in linesToRemove {
+            for block in rowToRemove {
+                let randomRadius = CGFloat(UInt(arc4random_uniform(400) + 100))
+                let goLeft = arc4random_uniform(100) % 2 == 0
+                var point = pointForColumn(block.column, row: block.row)
+                point = CGPointMake(point.x + (goLeft ? -randomRadius: randomRadius), point.y)
+                let randomDuration = NSTimeInterval(arc4random_uniform(2)) + 0.5
+                
+                var startAngle = CGFloat(M_PI)
+                var endAngle = startAngle * 2
+                if goLeft {
+                    endAngle = startAngle
+                    startAngle = 0
+                }
+                let archPath = NSBezierPath()
+                archPath.appendBezierPathWithArcWithCenter(point, radius: randomRadius, startAngle: startAngle, endAngle: endAngle, clockwise: goLeft)
+                let archAction = SKAction.followPath(archPath.toCGPath()!,
+                                                     asOffset: false,
+                                                     orientToPath: true,
+                                                     duration: randomDuration)
+                archAction.timingMode = .EaseIn
+                let sprite = block.sprite!
+                sprite.zPosition = 100
+                sprite.runAction(SKAction.sequence([SKAction.group([archAction, SKAction.fadeOutWithDuration(NSTimeInterval(randomDuration))]), SKAction.removeFromParent()]))
+            }
+        }
+        
+        runAction(SKAction.waitForDuration(longestDuration), completion: completion)
     }
     
     override func keyDown(theEvent: NSEvent) {
@@ -182,5 +230,36 @@ class GameScene: SKScene {
             return
         }
         inputDelegate?.keyPressed(keyType!)
+    }
+}
+
+extension NSBezierPath {
+    func toCGPath() -> CGPath? {
+        guard self.elementCount != 0 else {
+            return nil
+        }
+        
+        let path = CGPathCreateMutable()
+        var didClosePath = false
+        
+        for i in 0...self.elementCount - 1 {
+            var points = [NSPoint](count:3, repeatedValue: NSZeroPoint)
+            switch self.elementAtIndex(i, associatedPoints: &points) {
+            case .MoveToBezierPathElement:
+                CGPathMoveToPoint(path, nil, points[0].x, points[0].y)
+            case .LineToBezierPathElement:
+                CGPathAddLineToPoint(path, nil, points[0].x, points[0].y)
+            case .CurveToBezierPathElement:
+                CGPathAddCurveToPoint(path, nil, points[0].x, points[0].y, points[1].x, points[1].y, points[2].x, points[2].y)
+            case .ClosePathBezierPathElement:
+                CGPathCloseSubpath(path)
+                didClosePath = true
+            }
+        }
+        
+        if !didClosePath {
+            CGPathCloseSubpath(path)
+        }
+        return CGPathCreateCopy(path)
     }
 }

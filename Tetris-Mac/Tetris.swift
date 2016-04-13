@@ -231,6 +231,7 @@ class Tetris {
             var row = removedLines[0][0].row - 1
             while row > 0 {
                 guard let block = blockArray[column, row] else {
+                    row -= 1
                     continue
                 }
                 var newRow = row
@@ -252,6 +253,7 @@ class Tetris {
     }
     
     func removeAllBlocks() -> Array<Array<Block>> {
+        PrintFunctionName(nil)
         var allBlocks = Array<Array<Block>>()
         for row in 0..<NumRows {
             var rowOfBlocks = Array<Block>()

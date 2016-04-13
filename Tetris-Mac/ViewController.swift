@@ -13,8 +13,14 @@ class ViewController: NSViewController, TetrisDelegate, GameSceneInputDelegate {
     var scene: GameScene!
     var tetris: Tetris!
 
+    @IBOutlet weak var levelLabel: NSTextField!
+    @IBOutlet weak var scoreLabel: NSTextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        levelLabel.editable = false
+        scoreLabel.editable = false
+        
         let gameView = view as! SKView
         gameView.showsFPS = true
         gameView.showsNodeCount = true
@@ -47,6 +53,9 @@ class ViewController: NSViewController, TetrisDelegate, GameSceneInputDelegate {
     
 // MARK: TetrisDelegate
     func gameDidBegin(tetris: Tetris) {
+        levelLabel.stringValue = "\(tetris.level)"
+        scoreLabel.stringValue = "\(tetris.score)"
+        
         if tetris.nextShape != nil && tetris.nextShape!.blocks[0].sprite == nil {
             scene.addPreviewShapeToScene(tetris.nextShape!, completion: { 
                 self.nextShape()
@@ -58,10 +67,21 @@ class ViewController: NSViewController, TetrisDelegate, GameSceneInputDelegate {
     
     func gameDidEnd(tetris: Tetris) {
         scene.stopTicking()
+        scene.playSound("gameover.mp3")
+        scene.animateCollapsingLines(tetris.removeAllBlocks(), fallenBlocks: Array<Array<Block>>()) { 
+            tetris.beginGame()
+        }
     }
     
     func gameDidLevelUp(tetris: Tetris) {
+        levelLabel.stringValue = "\(tetris.level)"
+        if scene.tickLengthMillis >= 100 {
+            scene.tickLengthMillis -= 100
+        } else if scene.tickLengthMillis > 50 {
+            scene.tickLengthMillis -= 50
+        }
         
+        scene.playSound("levelup.mp3")
     }
     
     func gameShapeDidDrop(tetris: Tetris) {
@@ -69,15 +89,19 @@ class ViewController: NSViewController, TetrisDelegate, GameSceneInputDelegate {
         scene.redrawShape(tetris.fallingShape!) { 
             tetris.letShapeFall()
         }
+        
+        scene.playSound("drop.mp3")
     }
     
     func gameShapeDidLand(tetris: Tetris) {
         scene.stopTicking()
         let removedLines = tetris.removeCompletedLines()
         if removedLines.linesRemoved.count > 0 {
+            self.scoreLabel.stringValue = "\(tetris.score)"
             scene.animateCollapsingLines(removedLines.linesRemoved, fallenBlocks: removedLines.fallenBlocks, completion: { 
                 self.gameShapeDidLand(tetris)
             })
+            scene.playSound("bomb.mp3")
         } else {
             nextShape()
         }
@@ -89,7 +113,6 @@ class ViewController: NSViewController, TetrisDelegate, GameSceneInputDelegate {
     
 // MARK: - GameSceneInputDelegate
     func keyPressed(keyType: GameKeyControlType) {
-        print(keyType.description)
         switch keyType {
         case .Left:
             tetris.moveShapeLeft()

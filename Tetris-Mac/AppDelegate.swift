@@ -8,6 +8,14 @@
 
 import Cocoa
 
+func PrintFunctionName(logMessage: String?, functionName: String = #function) {
+    if let message = logMessage {
+        print("\(functionName): \(message)")
+    } else {
+        print("\(functionName)")
+    }
+}
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(aNotification: NSNotification) {
